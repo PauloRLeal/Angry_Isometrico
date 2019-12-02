@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Scripts/Gomera.gd" type="Script" id=1]
+[ext_resource path="res://Scene/ponto_trajetoria.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Assets/PNG/gomera_1.png" type="Texture" id=3]
+[ext_resource path="res://Assets/PNG/gomera_2.png" type="Texture" id=4]
+[ext_resource path="res://Scene/elastico.tscn" type="PackedScene" id=5]
+
+[node name="Gomera" type="Node2D"]
+position = Vector2( 292.898, 744.798 )
+script = ExtResource( 1 )
+ponto_trajetoria = ExtResource( 2 )
+
+[node name="G-1" type="Sprite" parent="."]
+texture = ExtResource( 3 )
+
+[node name="G-2" type="Sprite" parent="."]
+z_index = 2
+texture = ExtResource( 4 )
+
+[node name="Pos_saida" type="Position2D" parent="."]
+position = Vector2( 0, -70 )
+
+[node name="elastico_1" parent="." instance=ExtResource( 5 )]
+position = Vector2( 22, -70 )
+
+[node name="elastico_2" parent="." instance=ExtResource( 5 )]
+position = Vector2( -23, -70 )
+z_index = 1
+
+[node name="trajetoria" type="Node2D" parent="."]
+position = Vector2( 0, -70 )
