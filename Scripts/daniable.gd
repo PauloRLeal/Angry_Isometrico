@@ -14,8 +14,8 @@ func _integrate_forces(state : Physics2DDirectBodyState) -> void:
 	var quantidade_contatos = {}
 	for i in range(0, state.get_contact_count()):
 		var id_contato = state.get_contact_collider_id(i)
-		if (state.get_contact_collider_object(i).get_name() == "Personagem"):
-			print("Venceu!!!!!")
+#		if (state.get_contact_collider_object(i).get_name() == "Personagem"):
+#			print("Venceu!!!!!")
 		if !quantidade_contatos.has(id_contato):
 			quantidade_contatos[id_contato] = 1
 		else:

@@ -1,10 +1,11 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://Tilset/teste.tres" type="TileSet" id=1]
+[ext_resource path="res://Tilset/teste6.tres" type="TileSet" id=1]
 [ext_resource path="res://Scripts/TemplateLevel.gd" type="Script" id=2]
 
 [node name="Mapa" type="TileMap"]
 tile_set = ExtResource( 1 )
 cell_size = Vector2( 70, 70 )
 format = 1
+tile_data = PoolIntArray( 65541, 5, 0 )
 script = ExtResource( 2 )

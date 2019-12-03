@@ -2,6 +2,9 @@ extends "res://Scripts/daniable.gd"
 
 export (int, 100, 500) var vel_transferencia = 100
 
+onready var textura = get_node("Textura")
+onready var colision = get_node("CollisionShape2D")
+
 enum {
 	ESTADO_QUIETO,
 	ESTADO_TRANSFERIR,
@@ -28,6 +31,8 @@ func _integrate_forces(state : Physics2DDirectBodyState) -> void:
 		impulso = gomera.obter_impulso() #diff_pos * 0.06
 		if impulso.x > 0:
 			estado = ESTADO_RELEASED
+			
+			print(colision)
 		else:
 			estado = ESTADO_TOMADO
 	var vl = state.linear_velocity
@@ -61,7 +66,9 @@ func _integrate_forces(state : Physics2DDirectBodyState) -> void:
 			else:
 				vl = diff_pos.normalized() * impulso.length()  #* delta
 		ESTADO_LANCADO:
-			pass
+			if(textura.scale.y >= 0.5):
+				textura.set_scale(Vector2(textura.scale.x - 0.003, textura.scale.y - 0.003))
+				colision.set_scale(Vector2(textura.scale.x - 0.003, textura.scale.y - 0.003))
 			
 	state.linear_velocity = vl 
 	state.angular_velocity = va

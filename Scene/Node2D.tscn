@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Assets/PNG/Other/bush.png" type="Texture" id=1]
 [ext_resource path="res://Assets/PNG/Other/cactus.png" type="Texture" id=2]
 [ext_resource path="res://Assets/PNG/Other/grass.png" type="Texture" id=3]
 [ext_resource path="res://Assets/Isometric/tile_N.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Isometric/tile_tree_E.png" type="Texture" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 36.4848, 34.7496 )
@@ -16,7 +17,7 @@ b = Vector2( 69.4848, 6.25024 )
 normal = Vector2( 0.0204087, -0.999792 )
 
 [sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 70.4847, 39.2498 )
+extents = Vector2( 70.4847, 45.3682 )
 
 [node name="Node2D" type="Node2D"]
 
@@ -61,12 +62,16 @@ position = Vector2( 0, 10 )
 shape = SubResource( 3 )
 
 [node name="tile_N3" type="Sprite" parent="."]
-position = Vector2( 876.432, 545 )
+position = Vector2( 1276.43, 545 )
 texture = ExtResource( 4 )
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="tile_N3"]
-position = Vector2( -5.4848, 38.7498 )
+position = Vector2( 2.10535, 41.579 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="tile_N3/StaticBody2D2"]
-position = Vector2( 0, 10 )
+position = Vector2( -2.10522, 13.6842 )
 shape = SubResource( 4 )
+
+[node name="tile_tree_E" type="Sprite" parent="."]
+position = Vector2( 172.68, 468.164 )
+texture = ExtResource( 5 )
